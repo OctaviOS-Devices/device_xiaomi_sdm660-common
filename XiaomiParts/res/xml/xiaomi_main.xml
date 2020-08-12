@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:key="audio"
+        android:title="@string/audio_category">
+        
+        <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
+            android:defaultValue="2"
+            android:key="headphone_gain"
+            android:max="20"
+            app:min="-40"
+            android:icon="@drawable/ic_headphone"
+            android:title="@string/headphone_gain" />
+
+        <com.xiaomi.parts.preferences.CustomSeekBarPreference
+            android:defaultValue="0"
+            android:key="microphone_gain"
+            android:max="20"
+            app:min="-10"
+            android:icon="@drawable/ic_mic"
+            android:title="@string/microphone_gain" />
+
+        <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
+            android:defaultValue="0"
+            android:key="earpiece_gain"
+            android:max="20"
+            app:min="-10"
+            android:icon="@drawable/ic_earpiece"
+            android:title="@string/earpiece_gain" />
+
+        <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference 
+            android:defaultValue="0"
+            android:key="speaker_gain" 
+            android:max="20"
+            app:min="-10" 
+            android:icon="@drawable/ic_speaker"
+            android:title="@string/speaker_gain" />
+
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/display_category">
+    
+        <Preference
+            android:key="device_kcal"
+            android:persistent="false"
+            android:icon="@drawable/ic_kcal"
+            android:title="@string/device_kcal_title"
+            android:summary="@string/device_kcal_summary" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.xiaomi.parts.kcal.KcalSettingsActivity"
+                android:targetPackage="com.xiaomi.parts.kcal"/>
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="selinux"
+        android:title="@string/selinux_category">
+
+        <Preference
+            android:key="selinux_explanation"
+            android:summary="@string/selinux_explanation_summary"
+            android:selectable="false"/>
+
+        <SwitchPreference
+            android:key="selinux_mode"
+            android:icon="@drawable/ic_selinux"
+            android:title="@string/selinux_mode_title"
+            android:summaryOn="@string/selinux_enforcing_summary"
+            android:summaryOff="@string/selinux_permissive_summary" />
+
+        <SwitchPreference
+            android:key="selinux_persistence"
+            android:icon="@drawable/ic_selinux_persistence"
+            android:title="@string/selinux_persistence_title"
+            android:summary="@string/selinux_persistence_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/torch_category">
+       
+        <com.xiaomi.parts.preferences.CustomSeekBarPreference
+            android:defaultValue="100"
+            android:key="torch_brightness"
+            android:max="255"
+            app:min="1"
+            android:icon="@drawable/ic_torch"
+            android:title="@string/torch_brightness_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/vibration_category">
+        <com.xiaomi.parts.preferences.VibrationSeekBarPreference
+            android:defaultValue="80"
+            android:key="vibration_strength"
+            android:max="100"
+            android:title="@string/vibration_strength_title"
+            android:icon="@drawable/ic_vibrate"
+            app:min="1"
+            app:units="%"/>
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:key="boost"
+        android:title="@string/boost_title" >
+
+        <com.xiaomi.parts.preferences.SecureSettingListPreference
+            android:key="gpuboost"
+            android:dialogTitle="@string/gpuboost_dialogTitle"
+            android:entries="@array/gpuboost_profiles"
+            android:entryValues="@array/gpuboost_values"
+            android:icon="@drawable/ic_gpuboost" 
+            android:defaultValue="0"
+            android:title="@string/gpuboost_title" />
+
+        <com.xiaomi.parts.preferences.SecureSettingListPreference
+            android:key="cpuboost"
+            android:dialogTitle="@string/cpuboost_dialogTitle"
+            android:entries="@array/cpuboost_profiles"
+            android:entryValues="@array/cpuboost_values"
+            android:icon="@drawable/ic_cpuboost" 
+            android:defaultValue="0"
+            android:title="@string/cpuboost_title" />
+
+         <com.xiaomi.parts.preferences.SecureSettingSwitchPreference
+            android:key="touchboost"
+            android:defaultValue="false"
+            android:title="@string/touchboost_title"
+            android:icon="@drawable/ic_boost"
+            android:summary="@string/touchboost_summary" />
+            
+    </PreferenceCategory>
+</PreferenceScreen>
