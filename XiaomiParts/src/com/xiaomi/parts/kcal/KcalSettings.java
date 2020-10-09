@@ -57,12 +57,18 @@ public class KcalSettings extends PreferenceFragment implements
         mMin.setOnPreferenceChangeListener(this);
 
         mRed = (SecureSettingSeekBarPreference) findPreference(PREF_RED);
+        mRed.setMax(RED_DEFAULT);
+        mRed.setDefaultValue(RED_DEFAULT);
         mRed.setOnPreferenceChangeListener(this);
 
         mGreen = (SecureSettingSeekBarPreference) findPreference(PREF_GREEN);
+        mGreen.setMax(GREEN_DEFAULT);
+        mGreen.setDefaultValue(GREEN_DEFAULT);
         mGreen.setOnPreferenceChangeListener(this);
 
         mBlue = (SecureSettingSeekBarPreference) findPreference(PREF_BLUE);
+        mBlue.setMax(BLUE_DEFAULT);
+        mBlue.setDefaultValue(BLUE_DEFAULT);
         mBlue.setOnPreferenceChangeListener(this);
 
         mSaturation = (SecureSettingSeekBarPreference) findPreference(PREF_SATURATION);
@@ -198,9 +204,9 @@ public class KcalSettings extends PreferenceFragment implements
 
     void applyValues(String preset) {
         String[] values = preset.split(" ");
-        int red = Integer.parseInt(values[0]);
-        int green = Integer.parseInt(values[1]);
-        int blue = Integer.parseInt(values[2]);
+        int red = Utils.getFinalColorValue(Integer.parseInt(values[0]));
+        int green = Utils.getFinalColorValue(Integer.parseInt(values[1]));
+        int blue = Utils.getFinalColorValue(Integer.parseInt(values[2]));
         int min = Integer.parseInt(values[3]);
         int sat = Integer.parseInt(values[4]);
         int value = Integer.parseInt(values[5]);

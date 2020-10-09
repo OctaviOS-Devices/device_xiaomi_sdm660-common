@@ -29,26 +29,20 @@
         app:iconSpaceReserved="false">
 
         <com.xiaomi.parts.preferences.SecureSettingSeekBarPreference
-            android:defaultValue="255"
             android:dependency="kcal_enabled"
             android:key="color_red"
-            android:max="255"
             android:title="@string/color_red"
             app:iconSpaceReserved="false"/>
 
         <com.xiaomi.parts.preferences.SecureSettingSeekBarPreference
-            android:defaultValue="255"
             android:dependency="kcal_enabled"
             android:key="color_green"
-            android:max="255"
             android:title="@string/color_green"
             app:iconSpaceReserved="false"/>
 
         <com.xiaomi.parts.preferences.SecureSettingSeekBarPreference
-            android:defaultValue="255"
             android:dependency="kcal_enabled"
             android:key="color_blue"
-            android:max="255"
             android:title="@string/color_blue"
             app:iconSpaceReserved="false"/>
 

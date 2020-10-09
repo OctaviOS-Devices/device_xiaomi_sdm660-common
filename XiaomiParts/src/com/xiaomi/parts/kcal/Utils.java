@@ -1,5 +1,11 @@
 package com.xiaomi.parts.kcal;
 
+import java.io.InputStreamReader;
+import java.io.InputStream;
+import java.io.IOException;
+import java.lang.Math;
+import java.lang.ProcessBuilder;
+
 public interface Utils {
     String PREF_ENABLED = "kcal_enabled";
     String PREF_SETONBOOT = "set_on_boot";
@@ -14,10 +20,11 @@ public interface Utils {
     String PREF_GRAYSCALE = "grayscale";
 
     boolean SETONBOOT_DEFAULT = false;
+    double SCREEN_BURNIN_AMOUNT = 0.9;
     int MINIMUM_DEFAULT = 35;
-    int RED_DEFAULT = 255;
-    int GREEN_DEFAULT = 255;
-    int BLUE_DEFAULT = 255;
+    int RED_DEFAULT = getMaxColorValue();
+    int GREEN_DEFAULT = getMaxColorValue();
+    int BLUE_DEFAULT = getMaxColorValue();
     int SATURATION_DEFAULT = 35;
     int SATURATION_OFFSET = 225;
     int VALUE_DEFAULT = 127;
@@ -34,4 +41,42 @@ public interface Utils {
     String KCAL_RGB = "/sys/devices/platform/kcal_ctrl.0/kcal";
     String KCAL_SAT = "/sys/devices/platform/kcal_ctrl.0/kcal_sat";
     String KCAL_VAL = "/sys/devices/platform/kcal_ctrl.0/kcal_val";
+
+    static boolean isBurnedInPanel() {
+        String panel = getPanelName();
+        if (panel != null) {
+            if (panel.contains("tianma")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    static String getPanelName() {
+        StringBuilder cmdReturn = new StringBuilder();
+        try {
+            ProcessBuilder processBuilder = new ProcessBuilder("sh","-c","(cat /sys/class/graphics/fb0/msm_fb_panel_info | grep panel_name)");
+            Process process = processBuilder.start();
+            InputStream inputStream = process.getInputStream();
+            int c;
+            while ((c = inputStream.read()) != -1) {
+                cmdReturn.append((char) c);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return cmdReturn.toString();
+    }
+
+    public static int getMaxColorValue() {
+        return getFinalColorValue(255);
+    }
+
+    public static int getFinalColorValue(int value) {
+        int safeVal = value;
+        if (isBurnedInPanel()) {
+            safeVal = (int) Math.round(value * SCREEN_BURNIN_AMOUNT);
+        }
+        return safeVal;
+    }
 }
