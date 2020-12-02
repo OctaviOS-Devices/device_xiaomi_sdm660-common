@@ -200,6 +200,9 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 TARGET_COPY_OUT_PRODUCT := system/product
 TARGET_COPY_OUT_VENDOR := vendor
 
+# HWUI
+HWUI_COMPILE_FOR_PERF := true
+
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
