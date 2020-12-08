@@ -47,3 +47,7 @@ sys.thermal.                            u:object_r:thermal_engine_prop:s0
 
 # vendor_default_prop
 vendor.display.lcd_density              u:object_r:vendor_default_prop:s0
+
+#Boosts
+persist.xiaomiparts.gpu_profile                  u:object_r:boosts_prop:s0
+persist.xiaomiparts.cpu_profile                  u:object_r:boosts_prop:s0

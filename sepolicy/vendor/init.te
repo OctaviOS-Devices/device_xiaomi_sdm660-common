@@ -11,3 +11,9 @@ allow init sysfs_graphics:file { open write };
 allow init sysfs_battery_supply:file setattr;
 allow init socket_device:sock_file { unlink setattr create };
 allow init vendor_default_prop:property_service set;
+
+# SELinux Switch
+allow init su:process { noatsecure  rlimitinh  siginh  transition };
+
+# Boost
+allow init vendor_file:file { execute execute_no_trans };

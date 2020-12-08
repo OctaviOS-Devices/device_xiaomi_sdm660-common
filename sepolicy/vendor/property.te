@@ -10,3 +10,6 @@ type thermal_engine_prop, property_type;
 # Power
 type power_prop, property_type;
 type vendor_power_prop, property_type;
+
+# Boost
+type boosts_prop, property_type;
