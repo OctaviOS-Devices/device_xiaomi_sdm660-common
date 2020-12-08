@@ -639,7 +639,8 @@ PRODUCT_BOOT_JARS += \
 # Prebuilt Packages
 PRODUCT_PACKAGES += \
     GCamGo \
-    GalleryGo
+    GalleryGo \
+    Retro
 
 # XiaomiParts
 PRODUCT_PACKAGES += \
