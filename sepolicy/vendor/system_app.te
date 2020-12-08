@@ -18,7 +18,7 @@ allow system_app sysfs_micgain:file rw_file_perms;
 allow system_app sysfs_zram:dir search;
 allow system_app vendor_default_prop:file { getattr open read };
 allow system_app wificond:binder call;
-set_prop(system_app, system_prop);
+allow system_app sysfs_fps:file rw_file_perms;
 
 # Boosts
 allow system_app boosts_prop:property_service set;
@@ -27,3 +27,5 @@ get_prop(system_app, boosts_prop);
 
 allow system_app sysfs_touchboost:file { open read getattr write };
 allow system_app sysfs_msm_perf:dir { search };
+set_prop(system_app, system_prop);
+
