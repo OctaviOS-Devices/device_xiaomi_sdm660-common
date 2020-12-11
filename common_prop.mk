@@ -389,3 +389,50 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     power.saving.mode=1 \
     pm.sleep_mode=1
+
+# ZenTouch V12
+
+#ngentouch improve
+PRODUCT_PROPERTY_OVERRIDES += \
+    touch.pressure.scale=0.0001 \
+    touch.orientationAware=0 \
+    persist.sys.ui.hw=1 \
+    touch.size.calibration=geometric \
+    touch.size.scale=1 \
+    touch.size.bias=0 \
+    touch.size.isSummed=0 \
+    persist.device_config.runtime_native.usap_pool_enabled=true \
+    touch.orientation.calibration=interpolated \
+    touch.distance.calibration=area \
+    touch.distance.scale=0 \
+    touch.coverage.calibration=box \
+    touch.pressure.scale=0 \
+    touch.gestureMode=spots \
+    MultitouchMinDistance=1px \
+    MultitouchSettleInterval=0.1ms \
+    SurfaceOrientation=0 \
+    TapInterval=0.1ms \
+    TapDragInterval=0.1ms \
+    QuietInterval=0.1ms \
+    MovementSpeedRatio=0.8 \
+    TapSlop=1px \
+    persist.sys.scrollingcache=3
+
+#Improve sliding response
+PRODUCT_PROPERTY_OVERRIDES += \
+    windowsmgr.max_events_per_sec=90 \
+    view.scroll_friction=0 \
+    ro.min_pointer_dur=8 \
+    touch.deviceType=touchScreen
+
+#Improve global touch screen response
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.egl.hw=1 \
+    video.accelerate.hw=1 \
+    view.scroll_friction=0
+
+#Open the first-in-first-out interface thread
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.use_fifo_ui=1 \
+    pm.dexopt.bg-dexopt=speed-profile \
+    pm.dexopt.shared=speed
