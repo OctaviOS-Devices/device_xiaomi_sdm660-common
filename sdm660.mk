@@ -565,7 +565,9 @@ PRODUCT_HOST_PACKAGES += \
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH)
+    $(COMMON_PATH) \
+    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
+    vendor/qcom/opensource/commonsys/system/bt/conf
 
 # Shims
 PRODUCT_PACKAGES += \
