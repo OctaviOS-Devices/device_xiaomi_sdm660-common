@@ -115,7 +115,17 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/graphite_ipc_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/graphite_ipc_platform_info.xml \
     $(COMMON_PATH)/configs/audio/listen_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/listen_platform_info.xml \
     $(COMMON_PATH)/configs/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
-    $(COMMON_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
+    $(COMMON_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml \
+    $(COMMON_PATH)/configs/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
+    $(COMMON_PATH)/configs/audio/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
+    $(COMMON_PATH)/configs/audio/mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_mtp.xml \
+    $(COMMON_PATH)/configs/audio/mixer_paths.v10_2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.v10_2.xml \
+    $(COMMON_PATH)/configs/audio/mixer_path_Lav.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_path_Lav.xml \
+    $(COMMON_PATH)/configs/audio/mixer_paths.v10.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.v10.xml \
+    $(COMMON_PATH)/configs/audio/mixer_path_LavB.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_path_LavB.xml \
+    $(COMMON_PATH)/configs/audio/mixer_paths.v9_2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.v9_2.xml \
+    $(COMMON_PATH)/configs/audio/mixer_paths.v9.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.v9.xml \
+    $(COMMON_PATH)/configs/audio/audio_configs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_configs.xml 
 
 # Audio Policy
 PRODUCT_COPY_FILES += \
