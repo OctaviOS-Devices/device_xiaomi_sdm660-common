@@ -1191,4 +1191,10 @@
     <string name="config_performance_profile" translatable="false">3</string>
     <string name="config_powersave_profile" translatable="false">2</string>
     <string name="config_screen_off_profile" translatable="false">2</string>
+
+    <!-- Whether to enable doze always on -->
+    <bool name="config_enableDozeAlwaysOn">true</bool>
+
+    <!-- Whether device supports an alt. ambient display -->
+    <bool name="config_alt_ambient_display">true</bool>
 </resources>
