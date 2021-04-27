@@ -39,6 +39,11 @@ ro.fota.oem                             u:object_r:exported_radio_prop:s0
 ro.miui.                                u:object_r:exported_radio_prop:s0
 ro.product.mod_device                   u:object_r:exported_radio_prop:s0
 
+# Radio
+persist.vendor.data.offload_ko_load     u:object_r:vendor_radio_prop:s0
+persist.vendor.data.shsusr_load         u:object_r:vendor_radio_prop:s0
+persist.vendor.data.qmipriod_load       u:object_r:vendor_radio_prop:s0
+
 # Thermal engine
 persist.sys.thermal.                    u:object_r:thermal_engine_prop:s0
 sys.thermal.                            u:object_r:thermal_engine_prop:s0
