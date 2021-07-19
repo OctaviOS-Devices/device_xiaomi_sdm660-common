@@ -96,6 +96,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.video.disable.ubwc=1 \
     vidc.enc.dcvs.extra-buff-count=2
 
+# Codec2 switch
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.media.codec2=1
+
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.disable_init_blank=true \
@@ -147,7 +151,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.thumbnail.prefer_hw_codecs=true \
     vendor.vidc.dec.enable.downscalar=1 \
     vendor.vidc.enc.disable_bframes=1 \
-    vendor.vidc.enc.disable.pq=true
+    vendor.vidc.enc.disable.pq=true \
+    vidc.enc.dcvs.extra-buff-count=2 \
+    media.stagefright.enable-http=true \
+    media.stagefright.enable-aac=true \
+    media.aac_51_output_enabled=true \
+    mm.enable.smoothstreaming=true \
+    vidc.enc.target_support_bframe=1 \
+    vendor.mm.enable.qcom_parser=13631487 \
+    vendor.video.disable.ubwc=1
 
 # Netflix
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
